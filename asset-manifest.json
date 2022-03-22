@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/top-shoppingCart/static/css/main.76db4e03.css",
+    "main.js": "/top-shoppingCart/static/js/main.51600f59.js",
+    "static/media/videoRiver.mov": "/top-shoppingCart/static/media/videoRiver.4ecf5c644e0cd271050d.mov",
+    "index.html": "/top-shoppingCart/index.html",
+    "main.76db4e03.css.map": "/top-shoppingCart/static/css/main.76db4e03.css.map",
+    "main.51600f59.js.map": "/top-shoppingCart/static/js/main.51600f59.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76db4e03.css",
+    "static/js/main.51600f59.js"
+  ]
+}
