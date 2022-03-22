@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom'
 
 export default function Shop(props) {
     const {data, itemHandler} = props

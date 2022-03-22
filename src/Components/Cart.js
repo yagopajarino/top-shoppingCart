@@ -29,7 +29,7 @@ export default function Cart(props) {
             <div className="cartItems">
                 {cart.map(item => (
                     <div key={item.id} id={item.id} className="cartElement">
-                        <img className="cartImg" src={data.find(d => d.id === item.id)["img"]}></img>
+                        <img className="cartImg" src={data.find(d => d.id === item.id)["img"]} alt="item"></img>
                         <div className="itemDetails">
                             <h1>{data.find(d => d.id === item.id)["title"]}</h1>
                             <span>Cantidad: {item.cantidad}</span>

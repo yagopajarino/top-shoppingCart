@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom"
 import videoRiver from "../Static/videoRiver.mov"
 import cartIcon from "../Static/iconCart.png"
@@ -21,7 +20,7 @@ function App(props) {
         <div className="headerTitle"><Link to="/" onClick={toggleVideo} id="home">Tienda River</Link></div>
         <div className="links">
             <Link to="/shop" onClick={toggleVideo} id="shop">Shop</Link>
-            <Link to="/cart" onClick={toggleVideo} id="cart"><img id="cartIcon" src={cartIcon} /> {cart.reduce((total,c) => total+c["cantidad"], 0)}</Link>
+            <Link to="/cart" onClick={toggleVideo} id="cart"><img id="cartIcon" src={cartIcon} alt="cart"/> {cart.reduce((total,c) => total+c["cantidad"], 0)}</Link>
         </div>
       </div>
       <Outlet />
