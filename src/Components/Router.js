@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react"
 import App from "./App"
 import Shop from "./Shop"
@@ -19,7 +19,7 @@ export default function Router() {
 
     const [cart, setCart] = useState([])
     const addItem = e => {
-        const id = e.target.parentNode.id
+        const id = e.target.parentNode.parentNode.id
 
         const filtered = cart.find(item => item.id === id)
         let data
@@ -37,12 +37,29 @@ export default function Router() {
         }
     }
 
+    const [displayVideo, setDisplayVideo] = useState(true)
+    function toggleVideo(e) {
+        let id = e.target.id
+        if(id === "shop" || id === "cart" || id === "cartIcon") {
+            setDisplayVideo(false)
+        }
+        else {
+            setDisplayVideo(true)
+        }
+    }
+
+    function removeItem(e) {
+        let id = e.target.parentNode.id
+        let items = [...cart]
+        setCart(items.filter(i => i.id !== id))
+    }
+
     return (
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App cart={cart}/>}>
+            <Route path="/" element={<App cart={cart} displayVideo={displayVideo} toggleVideo={toggleVideo}/>}>
                 <Route path="shop" element={<Shop data={data} itemHandler={addItem}/>} />
-                <Route path="cart" element={<Cart cart={cart} data={data}/>} />
+                <Route path="cart" element={<Cart cart={cart} data={data} removeItem={removeItem}/>} />
             </Route>
         </Routes>
     </BrowserRouter>
