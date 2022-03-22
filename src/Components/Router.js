@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, HashRouter } from "react-router-dom";
 import { useState } from "react"
 import App from "./App"
 import Shop from "./Shop"
@@ -55,13 +55,13 @@ export default function Router() {
     }
 
     return (
-    <BrowserRouter>
+    <HashRouter>
         <Routes>
             <Route path="/" element={<App cart={cart} displayVideo={displayVideo} toggleVideo={toggleVideo}/>}>
                 <Route path="shop" element={<Shop data={data} itemHandler={addItem}/>} />
                 <Route path="cart" element={<Cart cart={cart} data={data} removeItem={removeItem}/>} />
             </Route>
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
     )
 }
